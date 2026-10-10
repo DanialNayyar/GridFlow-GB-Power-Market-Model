@@ -222,15 +222,64 @@ This allowed the analysis to test whether storage can;
 
 
 
+## Key Results
+
+The scenario analysis demonstrated how higher renewable availability and battery storage can affect modelled system operation
+
+| Metric | A — Baseline | B — 1.5× Renewables | C — 1.5× Renewables + Battery |
+|---|---:|---:|---:|
+| Operating Cost (£bn) | 6.209 | 3.790 | 3.727 |
+| Gas Generation (TWh) | 63.854 | 34.976 | 34.093 |
+| Biomass Generation (TWh) | 0.012 | 0.002 | 0.000 |
+| Renewable Curtailment (TWh) | 0.0001 | 0.899 | 0.830 |
+| Average Marginal Price Proxy (£/MWh) | 71.13 | 47.47 | 47.80 |
+| Battery Discharge (TWh) | — | — | 1.099 |
 
 
+### Main Findings
+
+Increasing wind and solar by 50% produced significant changes relative to the baseline results. 
+
+- Modelled operating costs reduced by nearly **40%** from £6.21 billion to £3.79 billion
+- Gas generation was reduced by approximately **45%** from nearly 64 TWh to nearly 35 TWh
+- Average marginal price proxy was reduced by nearly **33%** from nearly £71/MWh to £47.50/MWh
+- However, nearly 0.90 TWh of renewable availability was curtailed.
+
+Implementing the 2GW/4GWh battery produced further improvements;
+- Operating costs fell further
+- Gas generation fell by another **0.88 TWh**
+- Renewable curtailment from by nearly 8% from 0.899 TWh to 0.830 TWh
+- Modelled biomass generation was eliminated entirely
+- Battery Discharged nearly **1.10 TWh** over the year
+
+The average marginal price proxy did, however, increase from £47.47/MWh to £47.80/MWh after storage was introduced. This reflects the battery's opportunity value, with storage included the shadow price of the balanced constrain is not always equal to the marginal cost of the generator operating at margin.
+
+Overall, the model suggests that increased renewable availability can significantly reduce dependence on fossil fuel sources and reduce variable operating cost whilst creating periods of renewable surplus. Battery storage helped absorbed some of the surplus and further reduce gas use and system cost.
 
 
+## Visulisations
+
+### Annual Operating Cost
+
+![Annual Operating Cost by Scenario](results/annual_operating_cost_by_scenario.png)
+
+Higher renewable availability produced the largest reduction in modelling operating cost and battery storage provides an even further reudction
+
+### Gas Generation
+
+![Gas Generation by Scenario](results/gas_generation_by_scenario.png)
 
 
+Gas generation fell significantly as renewable availability increased. Adding storage reduced gas generation furhter
+
+### Renewable Curtailment
+
+![Renewable Curtailment by Scenario](results/total_curtailment_by_scenario.png)
+
+Curtailment is negligeable in the baseline but does increase as renewable availability is increased. The implementation of battery storage reduces curtailment slightly but does not eliminate it
 
 
+### Average Marginal Price Proxy
 
-
-
+![Average Marginal Price by Scenario](results/average_marginal_price_by_scenario.png)
 
