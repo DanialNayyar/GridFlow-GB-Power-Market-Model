@@ -271,7 +271,7 @@ Higher renewable availability produced the largest reduction in modelling operat
 
 ### Gas Generation
 
-[Gas Generation by Scenario](results/Gas%20Generation%20by%20Scenario.png)
+![Gas Generation by Scenario](results/Gas%20Generation%20by%20Scenario.png)
 
 Gas generation fell significantly as renewable availability increased. Adding storage reduced gas generation furhter
 
