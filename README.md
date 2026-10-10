@@ -43,7 +43,7 @@ The workflow for processing the datasets included:
 
 Underlying demand was defined as:
 
-\[
+[
 \text{Dispatch Demand}
 =
 \text{Underlying Demand}
