@@ -261,25 +261,26 @@ Overall, the model suggests that increased renewable availability can significan
 
 ### Annual Operating Cost
 
-![Annual Operating Cost by Scenario](results/Annual Operating Cost by Scenario.png)
+![Annual Operating Cost by Scenario](results/Annual%20Operating%20Cost%20by%20Scenario.png)
 
 Higher renewable availability produced the largest reduction in modelling operating cost and battery storage provides an even further reudction
 
 ### Gas Generation
 
-![Gas Generation by Scenario](results/gas_generation_by_scenario.png)
-
+[Gas Generation by Scenario](results/Gas%20Generation%20by%20Scenario.png)
 
 Gas generation fell significantly as renewable availability increased. Adding storage reduced gas generation furhter
 
 ### Renewable Curtailment
 
-![Renewable Curtailment by Scenario](results/total_curtailment_by_scenario.png)
+![Renewable Curtailment by Scenario](results/Total%20Curtailment%20by%20Scenario.png)
+
 
 Curtailment is negligeable in the baseline but does increase as renewable availability is increased. The implementation of battery storage reduces curtailment slightly but does not eliminate it
 
 
 ### Average Marginal Price Proxy
 
-![Average Marginal Price by Scenario](results/average_marginal_price_by_scenario.png)
+![Average Marginal Price by Scenario](results/Avg%20Marginal%20Price%20by%20Scenario.png)
 
+Higher renewable availability significantly reduces the average marginal price proxy. The small increase after storage is introduced reflects the battery's opportunity value
