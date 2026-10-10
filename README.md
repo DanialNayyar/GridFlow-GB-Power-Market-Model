@@ -43,7 +43,7 @@ The workflow for processing the datasets included:
 
 Underlying demand was defined as:
 
-[
+$$
 \text{Dispatch Demand}
 =
 \text{Underlying Demand}
@@ -55,7 +55,7 @@ Underlying demand was defined as:
 \text{Imports}
 -
 \text{Other}
-\]
+\$$
 
 
 
@@ -71,9 +71,9 @@ Processed datasets are stored in: `data/processed/` and the orignal (raw) datase
 The core model is a least cost economic dispatch problem solved using SciPy's linear programming. For each 30min period, generation from the optimised technologies is selected to minimise the variable operating cost. 
 
 
-\[
+\$$
 \min \sum_g c_g P_{g,t}\Delta t
-\]
+\$$
 
 
 where:
@@ -86,9 +86,9 @@ where:
 The power balance constraint is:
 
 
-\[
+\$$
 \sum_g P_{g,t} = D_t
-\]
+\$$
 
 Generation is bounded by the technology specific availability or capacity limits.
 
@@ -143,22 +143,22 @@ The battery assumptions are:
 
 Battery state of charge evolves according to:
 
-\[
+\$$
 SOC_t =
 SOC_{t-1}
 +
 \eta_c P^{charge}_t\Delta t
 -
 \frac{P^{discharge}_t\Delta t}{\eta_d}
-\]
+\$$
 
 The power-balance equation becomes:
 
-\[
+\$$
 Generation_t + Discharge_t
 =
 DispatchDemand_t + Charge_t
-\]
+\$$
 
 
 
@@ -196,13 +196,13 @@ The baseline uses the original 2025 wind and solar availability and no modelled 
 ### Scenario B - Higher Renewables
 Wind and Solar availability was increased by 50% relative to the 2025 amounts.
 
-\[
+\$$
 Wind^{max}_{t}=1.5\times Wind^{baseline}_{t}
-\]
+\$$
 
-\[
+\$$
 Solar^{max}_{t}=1.5\times Solar^{baseline}_{t}
-\]
+\$$
 
 
 Electricity demand and conventional generation methods remained the same.
