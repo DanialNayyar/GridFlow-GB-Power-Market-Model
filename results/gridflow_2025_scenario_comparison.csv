@@ -1,0 +1,4 @@
+Scenario,Operating Cost (#b),Gas Generation (TWh),Biomass Generation (TWh),Total Renewable Curtailment (TWh),Average Marginal Price (#/MWh),Battery Discharge (TWh)
+A - Baseline,6.2093664805,63.8542245,0.011929,0.0001243,71.12813926940639,
+B - 1.5x Renewables,3.78962009775,34.9759685,0.00163975,0.899329625,47.46917808219178,
+C - 1.5x Renewables + Battery,3.726813267280251,34.092787441249996,0.0,0.8295396054016619,47.79664261975233,1.0986715268750002
