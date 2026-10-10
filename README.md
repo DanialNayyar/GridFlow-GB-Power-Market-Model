@@ -284,3 +284,73 @@ Curtailment is negligeable in the baseline but does increase as renewable availa
 ![Average Marginal Price by Scenario](results/Avg%20Marginal%20Price%20by%20Scenario.png)
 
 Higher renewable availability significantly reduces the average marginal price proxy. The small increase after storage is introduced reflects the battery's opportunity value
+
+## Assumptions and Limitations
+
+GridFlow is intended as a simplified electricity-market modelling exercise rather than a complete representation or forecast of the GB power system.
+
+Key assumptions and limitations include:
+
+- **Economic dispatch rather than unit commitment:** startup costs, minimum stable generation, minimum up/down times and generator ramp rates are not modelled.
+- **No transmission-network constraints:** GB is represented as a single system without regional congestion, transmission losses or nodal/zonal pricing.
+- **Constant marginal costs:** technology costs are fixed throughout the year rather than varying with fuel prices, carbon prices or plant-specific efficiency.
+- **Empirical capacity limits:** nuclear, gas and biomass capacity limits are based on maximum observed 2025 output rather than installed nameplate capacity.
+- **Renewable availability proxies:** observed wind and solar generation are used as availability profiles. These may already contain the effects of historical curtailment and therefore do not represent perfect unconstrained renewable-resource availability.
+- **Fixed generation categories:** hydro, coal, imports and other generation are treated as observed fixed supply rather than optimised technologies.
+- **Simplified storage representation:** the battery includes power, energy and efficiency constraints but excludes capital cost, degradation, ancillary-service revenues and other commercial considerations.
+- **Stylised renewable scenario:** the 1.5× wind and solar scenario is a sensitivity test rather than a forecast of future GB installed capacity.
+- **Marginal-price proxy:** shadow prices from the optimisation approximate marginal system value but are not predictions of observed wholesale electricity prices. Real prices are also affected by bidding behaviour, balancing actions, network constraints, reserves, scarcity and other market mechanisms.
+- **System-boundary differences:** demand and generation datasets do not have perfectly identical accounting boundaries. Dispatch demand is therefore constructed from the demand side of the dataset and adjusted for generation categories treated as fixed supply.
+
+Despite these simplifications, the model provides a consistent framework for exploring how renewable availability and storage can alter dispatch, curtailment, fossil generation, operating cost and marginal system value.
+
+
+## Development Notes
+
+The notebooks in this repository are retained as working analysis notebooks rather than rewritten as polished scripts.
+
+Alongside the final modelling workflow, they contain:
+
+- conceptual notes used while developing the model;
+- intermediate validation and diagnostic checks;
+- explanations of modelling assumptions and decisions;
+- documented corrections made when inconsistencies were identified;
+- interpretation of intermediate and final results.
+
+For example, an inconsistency in the treatment of wind generation within the dispatch-demand calculation was identified during validation and corrected so that the demand definition and renewable-generation bounds used consistent quantities.
+
+These development notes have intentionally been retained to make the modelling process transparent and to show how assumptions, errors and results were checked throughout the project.
+
+
+
+
+
+## Sources
+
+### Electricity-System Data
+
+- **National Energy System Operator (NESO) — Data Portal**  
+  2025 half-hourly GB electricity demand and generation data.  
+  https://www.neso.energy/data-portal
+
+### Generation-Cost Assumptions
+
+- **Modo Energy — Forecast Documentation: Generation Costs**  
+  Used as a reference when developing simplified short-run marginal-cost assumptions.  
+  https://forecastdocs.modoenergy.com/docs/inputs-generation-costs
+
+- **Department for Energy Security and Net Zero / Arup — Onshore Wind and Solar PV Cost of Electricity Report Update 2024**  
+  Used as a reference for renewable-generation cost assumptions.  
+  https://assets.publishing.service.gov.uk/media/68ba91f411b4ded2da19fe92/onshore-wind-and-solar-pv-cost-electricity-report-update-2024.pdf
+
+- **Department of Energy and Climate Change — Small Modular Reactor Techno-Economic Assessment, Project 2 (2016)**  
+  Used as a reference when developing the nuclear short-run marginal-cost assumption. The reported estimate was converted from 2010 prices to an approximate 2025 value before being rounded for use in the model.
+
+### Software
+
+The analysis was developed in Python using:
+
+- `pandas` and `NumPy` for data processing;
+- `Matplotlib` for visualisation;
+- `SciPy` for linear programming;
+- the HiGHS solver through `scipy.optimize.linprog` for economic-dispatch and storage optimisation.
