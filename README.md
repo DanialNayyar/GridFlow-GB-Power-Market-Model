@@ -44,6 +44,29 @@ The workflow for processing the datasets included:
 Underlying demand was defined as:
 
 $$
+\text{Underlying Demand}
+=
+\text{ND}
++
+\text{Embedded Wind}
++
+\text{Embedded Solar}
+$$
+
+Total wind availability was represented as:
+
+$$
+\text{Total Wind}
+=
+\text{Transmission Wind}
++
+\text{Embedded Wind}
+$$
+
+
+For the dispatch model, demand assigned to the optimised generation technologies was defined as:
+
+$$
 \text{Dispatch Demand}
 =
 \text{Underlying Demand}
@@ -55,9 +78,7 @@ $$
 \text{Imports}
 -
 \text{Other}
-\$$
-
-
+$$
 
 Hydro, coal, imports and other generation were treated as fixed observed supply whilst wind, solar, nuclear, gas and biomass were optimised.
 
@@ -71,24 +92,22 @@ Processed datasets are stored in: `data/processed/` and the orignal (raw) datase
 The core model is a least cost economic dispatch problem solved using SciPy's linear programming. For each 30min period, generation from the optimised technologies is selected to minimise the variable operating cost. 
 
 
-\$$
+$$
 \min \sum_g c_g P_{g,t}\Delta t
-\$$
-
+$$
 
 where:
 
-- \(P_{g,t}\) is generation from technology \(g\) in period \(t\);
-- \(c_g\) is the assumed short-run marginal cost in £/MWh;
-- \(\Delta t = 0.5\) hours.
+- $P_{g,t}$ is generation from technology $g$ in period $t$;
+- $c_g$ is the assumed short-run marginal cost in £/MWh;
+- $\Delta t = 0.5$ hours.
 
 
 The power balance constraint is:
 
-
-\$$
+$$
 \sum_g P_{g,t} = D_t
-\$$
+$$
 
 Generation is bounded by the technology specific availability or capacity limits.
 
@@ -141,25 +160,26 @@ The battery assumptions are:
 - initial state of charge: **2 GWh**;
 - final state of charge: **2 GWh**.
 
+
 Battery state of charge evolves according to:
 
-\$$
+$$
 SOC_t =
 SOC_{t-1}
 +
-\eta_c P^{charge}_t\Delta t
+\eta_c P^{charge}_t \Delta t
 -
-\frac{P^{discharge}_t\Delta t}{\eta_d}
-\$$
+\frac{P^{discharge}_t \Delta t}{\eta_d}
+$$
+
 
 The power-balance equation becomes:
 
-\$$
-Generation_t + Discharge_t
+$$
+P^{generation}_t + P^{discharge}_t
 =
-DispatchDemand_t + Charge_t
-\$$
-
+D_t + P^{charge}_t
+$$
 
 
 The final SOC constraint prevents the model from reducing system cost by emptying the battery at the end of the year.
@@ -196,13 +216,18 @@ The baseline uses the original 2025 wind and solar availability and no modelled 
 ### Scenario B - Higher Renewables
 Wind and Solar availability was increased by 50% relative to the 2025 amounts.
 
-\$$
-Wind^{max}_{t}=1.5\times Wind^{baseline}_{t}
-\$$
+$$
+Wind^{max}_{t}
+=
+1.5 \times Wind^{baseline}_{t}
+$$
 
-\$$
-Solar^{max}_{t}=1.5\times Solar^{baseline}_{t}
-\$$
+$$
+Solar^{max}_{t}
+=
+1.5 \times Solar^{baseline}_{t}
+$$
+
 
 
 Electricity demand and conventional generation methods remained the same.
