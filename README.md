@@ -261,7 +261,7 @@ Overall, the model suggests that increased renewable availability can significan
 
 ### Annual Operating Cost
 
-![Annual Operating Cost by Scenario](results/annual_operating_cost_by_scenario.png)
+![Annual Operating Cost by Scenario](results/Annual Operating Cost by Scenario.png)
 
 Higher renewable availability produced the largest reduction in modelling operating cost and battery storage provides an even further reudction
 
