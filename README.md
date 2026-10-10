@@ -43,41 +43,21 @@ The workflow for processing the datasets included:
 
 Underlying demand was defined as:
 
-$$
-\text{Underlying Demand}
-=
-\text{ND}
-+
-\text{Embedded Wind}
-+
-\text{Embedded Solar}
-$$
+```math
+\text{Underlying Demand} = \text{ND} + \text{Embedded Wind} + \text{Embedded Solar}
+```
 
 Total wind availability was represented as:
 
-$$
-\text{Total Wind}
-=
-\text{Transmission Wind}
-+
-\text{Embedded Wind}
-$$
+```math
+\text{Total Wind} = \text{Transmission Wind} + \text{Embedded Wind}
+```
 
 For the dispatch model, demand assigned to the optimised generation technologies was defined as:
 
-$$
-\text{Dispatch Demand}
-=
-\text{Underlying Demand}
--
-\text{Hydro}
--
-\text{Coal}
--
-\text{Imports}
--
-\text{Other}
-$$
+```math
+\text{Dispatch Demand} = \text{Underlying Demand} - \text{Hydro} - \text{Coal} - \text{Imports} - \text{Other}
+```
 
 Hydro, coal, imports and other generation were treated as fixed observed supply whilst wind, solar, nuclear, gas and biomass were optimised.
 
