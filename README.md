@@ -142,23 +142,23 @@ The battery assumptions are:
 
 Battery state of charge evolves according to:
 
-$$
+```math
 SOC_t =
 SOC_{t-1}
 +
 \eta_c P^{charge}_t \Delta t
 -
 \frac{P^{discharge}_t \Delta t}{\eta_d}
-$$
+```
 
 
 The power-balance equation becomes:
 
-$$
+```math
 P^{generation}_t + P^{discharge}_t
 =
 D_t + P^{charge}_t
-$$
+```
 
 
 The final SOC constraint prevents the model from reducing system cost by emptying the battery at the end of the year.
@@ -195,17 +195,17 @@ The baseline uses the original 2025 wind and solar availability and no modelled 
 ### Scenario B - Higher Renewables
 Wind and Solar availability was increased by 50% relative to the 2025 amounts.
 
-$$
+```math
 Wind^{max}_{t}
 =
 1.5 \times Wind^{baseline}_{t}
-$$
+```
 
-$$
+```math
 Solar^{max}_{t}
 =
 1.5 \times Solar^{baseline}_{t}
-$$
+```
 
 
 
