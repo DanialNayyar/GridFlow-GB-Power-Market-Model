@@ -63,7 +63,6 @@ $$
 \text{Embedded Wind}
 $$
 
-
 For the dispatch model, demand assigned to the optimised generation technologies was defined as:
 
 $$
